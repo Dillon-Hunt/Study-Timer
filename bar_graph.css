@@ -118,10 +118,11 @@
 }
 
 .column {
-    height: 100%;
+    height: 2px;
     min-height: 2px !important;
     flex: 1;
     border-radius: 5px 5px 0 0;
+    transition: 1s ease-in-out;
     background-color: #523acc;
     position: relative;
 }
