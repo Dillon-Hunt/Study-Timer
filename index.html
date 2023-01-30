@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMinutes</title>
+
+    <script defer src="dummy.js"></script>
+
+    <script defer src="functions/set_total_time.js"></script>
+    <script defer src="functions/create_graph.js"></script>
+    <script defer src="functions/list_subjects.js"></script>
+    <script defer src="functions/subject_picker.js"></script>
+    <script defer src="functions/subject_timer.js"></script>
+    <script defer src="functions/new_subject.js"></script>
+    <script defer src="functions/export_data.js"></script>
+    <script defer src="functions/get_dates.js"></script>
+
+    <script defer src="index.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bar_graph.css">
+</head>
+<body>
+    <div class="sections">
+        <div class="subjects section">
+            <h2 class="title">Top Subjects</h2>
+        </div>
+        
+        <div class="bar_graph section">
+
+            <button class="export_data">Export Data</button>
+
+            <select name="subject_picker" class="subject_picker">
+                <option selected value="all_courses">All Courses</option>
+            </select>
+
+            <h2 class="title">Study Time</h2>
+            <p class="total subtitle">1 Hour 10 Minutes</p>
+
+            <div class="columns">
+                <div class="before">«</div>
+
+                <div class="monday column"><p class="duration"></p><p class="day">Monday</p></div>
+                <div class="tuesday column"><p class="duration"></p><p class="day">Tuesday</p></div>
+                <div class="wednesday column"><p class="duration"></p><p class="day">Wednesday</p></div>
+                <div class="thursday column"><p class="duration"></p><p class="day">Thursday</p></div>
+                <div class="friday column"><p class="duration"></p><p class="day">Friday</p></div>
+                <div class="saturday column"><p class="duration"></p><p class="day">Saturday</p></div>
+                <div class="sunday column"><p class="duration"></p><p class="day">Sunday</p></div>
+
+                <div class="after current">»</div>
+
+                <p class="dates">Start Date - End Date</p>
+            </div>
+        </div>
+
+        <div class="footer section">
+            <form class="new_subject">
+                <input type="text" class="new_subject_name" placeholder="New Subject">
+            </form>
+
+            <button class="subject_timer">Start Timer</button>
+            <select name="subject_picker_timer" class="subject_picker_timer">
+                <option disabled value="all_courses">Choose a Subject</option>
+            </select>
+            <p class="timer_value">Click to start timer.</p>
+        </div>
+    </div>
+</body>
+</html>
