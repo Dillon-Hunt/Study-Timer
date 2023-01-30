@@ -6,12 +6,13 @@ function get_dates() {
     prev_monday.setDate((prev_monday.getDate() - (prev_monday.getDay() + 6) % 7) + (7 * parseInt(localStorage.getItem('week_index'))))
     date_object.setDate(prev_monday.getDate() + 6)
 
-    let date = prev_monday
+    let date = new Date(prev_monday)
 
     while (date <= date_object) {
-        dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
         date.setDate(date.getDate() + 1)
+        dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
     }
+
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     const start_date_split = dates[0].split('-')

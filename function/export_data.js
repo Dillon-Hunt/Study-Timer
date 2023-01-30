@@ -15,6 +15,8 @@ function export_data() {
         date.setDate(date.getDate() + 1)
     }
 
+    dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
+
     let subjects = data.map((subject) => {
         return {
             title: subject.title,
