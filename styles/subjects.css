@@ -1,0 +1,34 @@
+.subjects {
+    grid-area: subjects;
+    height: calc(50vh - 30px);
+    overflow-y: scroll;
+}
+
+.subject {
+    font-weight: 200;
+    font-size: 16px;
+    margin: 10px 0;
+    height: calc(1em + 25px);
+    min-width: 2px;
+    border-radius: 5px;
+    color: #ebebeb;
+    background-color: #523acc;
+    position: relative;
+}
+
+.subject_name {
+    margin: 0;
+    padding: 12.5px;
+    width: max-content;
+    position: absolute;
+}
+
+.subject_time {
+    margin: 0;
+    font-size: 8px;
+    left: 12.5px;
+    bottom: 2px;
+    position: absolute;
+    width: max-content;
+    color: #ebebeb;
+}

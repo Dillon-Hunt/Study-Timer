@@ -20,7 +20,12 @@
     <script defer src="index.js"></script>
 
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="bar_graph.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/subjects.css">
+    <link rel="stylesheet" href="styles/bar_graph.css">
+    <link rel="stylesheet" href="styles/timer.css">
+    <link rel="stylesheet" href="styles/goal.css">
+    <link rel="stylesheet" href="styles/settings.css">
 </head>
 <body>
     <div class="sections">
@@ -33,7 +38,7 @@
             <button class="export_data">Export Data</button>
 
             <select name="subject_picker" class="subject_picker">
-                <option selected value="all_courses">All Courses</option>
+                <option selected value="all_subjects">All Subjects</option>
             </select>
 
             <h2 class="title">Study Time</h2>
@@ -56,16 +61,29 @@
             </div>
         </div>
 
-        <div class="footer section">
+        <div class="goal section">
+            <h2 class="title">Goal</h2>
+        </div>
+
+        <div class="timer section">
+            <h2 class="title">Timer</h2>
+
+            <div class="button_container">
+                <button class="subject_timer">Start Timer</button>
+
+                <select name="subject_picker_timer" class="subject_picker_timer">
+                    <option disabled value="all_subjects">Choose a Subject</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="settings section">
+            <h2 class="title">Settings</h2>
+            <p class="input_label">Add new subject</p>
             <form class="new_subject">
                 <input type="text" class="new_subject_name" placeholder="New Subject">
             </form>
-
-            <button class="subject_timer">Start Timer</button>
-            <select name="subject_picker_timer" class="subject_picker_timer">
-                <option disabled value="all_courses">Choose a Subject</option>
-            </select>
-            <p class="timer_value">Click to start timer.</p>
         </div>
     </div>
 </body>

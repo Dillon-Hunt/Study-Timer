@@ -1,0 +1,37 @@
+.timer {
+    grid-area: timer;
+}
+
+.button_container {
+    position: relative;
+}
+
+.subject_timer {
+    width: 100%;
+    padding: 20px 20px 60px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.subject_timer:hover {
+    background-color: #f5f5f5;
+}
+
+.subject_picker_timer {
+    left: 50%;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    translate: -50% 0;;
+    background-color: transparent;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+}
+
+.subject_picker_timer:disabled {
+    pointer-events: none;
+}

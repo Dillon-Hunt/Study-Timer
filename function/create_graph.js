@@ -8,24 +8,18 @@ function create_graph() {
     const dates = get_dates()
     
     dates.forEach((date, id) => {
-        getData().forEach((course) => {
+        getData().forEach((subject) => {
 
-            if (subjects.filter(subject => subject.title === course.title).length === 0) subjects.push({ title: course.title, time: 0 })
-            if (course.dates.length === 0) return
-            
-            course.dates.forEach((courseDate) => {
-                if (courseDate.date === date) {
-                    courseDate.times.forEach((time) => {
-                        bars[dates.indexOf(date)] += parseInt(time.duration)
-                        subjects.filter(subject => subject.title === course.title)[0].time += parseInt(time.duration)
-                    })
-                }
-            })
+            if (subjects.find(item => item.title === subject.title) === undefined) subjects.push({ title: subject.title, time: 0 })
+            if (subject.dates.find(item => item.date === date) === undefined) return
+
+            const additional_duration = subject.dates.find(item => item.date === date).times.map((time) => time.duration).reduce((a, b) => a + b, 0)
+            bars[dates.indexOf(date)] += additional_duration
+            subjects.find(item => item.title === subject.title).time += additional_duration
+
+            const subject_object = subjects.find(item => item.title === subject.title)
     
-            if (subjects.filter(subject => subject.title === course.title).length !== 0 && maxSubject < subjects.filter(subject => subject.title === course.title)[0].time) {
-                maxSubject = subjects.filter(subject => subject.title === course.title)[0].time
-                
-            }
+            if (maxSubject < subject_object.time) maxSubject = subject_object.time
         })
     
         if (maxValue < bars[id]) {

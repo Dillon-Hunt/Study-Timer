@@ -1,12 +1,12 @@
 function update_time() {
-    if (document.querySelector('.subject_timer').textContent === 'Stop Timer') {
+    if (document.querySelector('.subject_picker_timer').disabled === true) {
 
         const time = Math.floor(new Date().getTime() - localStorage.getItem('start_time'))
         const hours = Math.floor(time / 3600000)
         const minutes = Math.floor((time % 3600000) / 60000)
         const seconds = Math.floor((time % 60000) / 1000)
 
-        document.querySelector('.timer_value').textContent = `${hours}h ${minutes}m ${seconds}s`
+        document.querySelector('.subject_timer').textContent = `${hours}h ${minutes}m ${seconds}s`
 
         setTimeout(update_time, 1000)
     }
@@ -16,7 +16,7 @@ function subject_timer() {
 
     let date = (new Date()).toISOString().split('T')[0]
 
-    if (document.querySelector('.subject_timer').textContent === 'Start Timer') {
+    if (document.querySelector('.subject_picker_timer').disabled === false) {
         document.querySelector('.subject_timer').textContent = 'Stop Timer'
         document.querySelector('.subject_picker_timer').disabled = true
 
@@ -29,7 +29,6 @@ function subject_timer() {
         document.querySelector('.subject_timer').textContent = 'Start Timer'
         document.querySelector('.subject_picker_timer').disabled = false
         document.querySelector('.subject_picker_timer').style.opacity = '1'
-        document.querySelector('.timer_value').textContent = 'Click to start timer.'
 
         const selected_subject = localStorage.getItem('subject')
         const selected_date = date

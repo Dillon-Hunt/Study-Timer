@@ -1,0 +1,11 @@
+.new_subject_name {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.input_label {
+    margin: 10px 0 5px 0;
+    font-weight: 200;
+}

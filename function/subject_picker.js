@@ -6,10 +6,10 @@ function pick_subject(e) {
     let total_time = 0
 
     dates.forEach((date, id) => {
-        getData().filter(course => e.target.value === 'all_courses' || course.title === e.target.value).forEach(course => {
-            course.dates.forEach((courseDate) => {
-                if (courseDate.date === date) {
-                    courseDate.times.forEach((time) => {
+        getData().filter(subject => e.target.value === 'all_subjects' || subject.title === e.target.value).forEach(subject => {
+            subject.dates.forEach((subjectDate) => {
+                if (subjectDate.date === date) {
+                    subjectDate.times.forEach((time) => {
                         bars[dates.indexOf(date)] += parseInt(time.duration)
     
                     })

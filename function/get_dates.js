@@ -9,8 +9,8 @@ function get_dates() {
     let date = new Date(prev_monday)
 
     while (date <= date_object) {
-        date.setDate(date.getDate() + 1)
         dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
+        date.setDate(date.getDate() + 1)
     }
 
 
