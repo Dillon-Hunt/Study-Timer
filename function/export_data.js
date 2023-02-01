@@ -11,11 +11,9 @@ function export_data() {
     let date = start_date
 
     while (date <= current_date) {
-        dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
+        dates = [...dates, `${date.getFullYear()}-${date.getMonth() + 1< 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}`]
         date.setDate(date.getDate() + 1)
     }
-
-    dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
 
     let subjects = data.map((subject) => {
         return {

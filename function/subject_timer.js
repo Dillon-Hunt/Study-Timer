@@ -14,7 +14,8 @@ function update_time() {
 
 function subject_timer() {
 
-    let date = (new Date()).toISOString().split('T')[0]
+    let date = new Date
+    date = `${date.getFullYear()}-${date.getMonth() + 1< 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}`
 
     if (document.querySelector('.subject_picker_timer').disabled === false) {
         document.querySelector('.subject_timer').textContent = 'Stop Timer'

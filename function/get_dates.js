@@ -1,17 +1,24 @@
+function add_days(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
 function get_dates() {
     let dates = []
     let date_object = new Date()
     let prev_monday = new Date()
 
     prev_monday.setDate((prev_monday.getDate() - (prev_monday.getDay() + 6) % 7) + (7 * parseInt(localStorage.getItem('week_index'))))
-    date_object.setDate(prev_monday.getDate() + 6)
+    date_object = add_days(prev_monday, 6)
 
     let date = new Date(prev_monday)
 
     while (date <= date_object) {
-        dates = [...dates, (new Date(date)).toISOString().split('T')[0]]
+        dates = [...dates, `${date.getFullYear()}-${date.getMonth() + 1< 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1}-${date.getDate() < 10 ? '0' + date.getDate() : date.getDate()}`]
         date.setDate(date.getDate() + 1)
     }
+
 
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
