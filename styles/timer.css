@@ -1,9 +1,13 @@
 .timer {
     grid-area: timer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button_container {
     position: relative;
+    width: 100%;
 }
 
 .subject_timer {
@@ -35,3 +39,10 @@
 .subject_picker_timer:disabled {
     pointer-events: none;
 }
+
+.timer > h2:nth-child(1) {
+    top: 40px;
+    left: 40px;
+    position: absolute;
+}
+   

@@ -7,6 +7,7 @@ function update_time() {
         const seconds = Math.floor((time % 60000) / 1000)
 
         document.querySelector('.subject_timer').textContent = `${hours}h ${minutes}m ${seconds}s`
+        document.title = `${hours}h ${minutes}m ${seconds}s`
 
         setTimeout(update_time, 1000)
     }
@@ -28,6 +29,7 @@ function subject_timer() {
         update_time()
     } else {
         document.querySelector('.subject_timer').textContent = 'Start Timer'
+        document.title = 'StudyMinutes'
         document.querySelector('.subject_picker_timer').disabled = false
         document.querySelector('.subject_picker_timer').style.opacity = '1'
 

@@ -25,7 +25,7 @@ function list_subjects(subjects, maxSubject) {
 
         let subject_time = document.createElement('p')
         subject_time.classList.add('subject_time')
-        subject_time.textContent = subject.time === 0 ? '' : `${Math.floor(subject.time / 3600)}h ${Math.floor((subject.time % 3600) / 60)}m`
+        subject_time.textContent = subject.time === 0 ? '0h 0m' : `${Math.floor(subject.time / 3600)}h ${Math.floor((subject.time % 3600) / 60)}m`
     
         let subjectOptions = document.createElement('option')
         let subjectOptionsTimer = document.createElement('option')
