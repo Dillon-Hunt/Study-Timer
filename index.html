@@ -8,11 +8,13 @@
 
     <script defer src="dummy.js"></script>
 
+    <script defer src="function/update_goal.js"></script>
     <script defer src="function/set_total_time.js"></script>
     <script defer src="function/create_graph.js"></script>
     <script defer src="function/list_subjects.js"></script>
     <script defer src="function/subject_picker.js"></script>
     <script defer src="function/subject_timer.js"></script>
+    <script defer src="function/new_goal.js"></script>
     <script defer src="function/new_subject.js"></script>
     <script defer src="function/export_data.js"></script>
     <script defer src="function/get_dates.js"></script>
@@ -63,6 +65,21 @@
 
         <div class="goal section">
             <h2 class="title">Goal</h2>
+            <div class="goal_progress_container">
+                <div class="goal_inner">
+                    <p class="goal_progress_text">0%</p>
+                    <p class="goal_text">Goal: 0 Hours</p>
+                </div>
+                <svg class="goal_progress" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <linearGradient id="progress_gradient">
+                            <stop offset="0%" stop-color="#523acc" />
+                            <!-- <stop offset="100%" stop-color="#9733EE" /> -->
+                        </linearGradient>
+                        </defs>
+                    <circle class="goal_progress_circle" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
+            </div>
         </div>
 
         <div class="timer section">
@@ -82,7 +99,12 @@
             <h2 class="title">Settings</h2>
             <p class="input_label">Add new subject</p>
             <form class="new_subject">
-                <input type="text" class="new_subject_name" placeholder="New Subject">
+                <input type="text" class="new_subject_name setting_input" placeholder="New Subject">
+            </form>
+
+            <p class="input_label">Set New Goal</p>
+            <form class="new_goal">
+                <input type="text" class="new_goal_name setting_input" placeholder="Enter Time (Hours)">
             </form>
         </div>
     </div>

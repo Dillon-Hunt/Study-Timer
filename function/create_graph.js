@@ -35,6 +35,9 @@ function create_graph() {
     })
 
     set_total_time(total_time)
+    update_goal(total_time / (localStorage.getItem('goal') * 3600))
+
+    document.querySelector('.goal_text').textContent = `Goal: ${localStorage.getItem('goal')} Hour${localStorage.getItem('goal') == 1 ? '' : 's'}`
 
     return [subjects, maxSubject]
 }
